@@ -83,6 +83,8 @@ TEST_CASE("My Tests", "[My Test 1]") {
   REQUIRE_NOTHROW(atm.RegisterAccount(35243453, 1234, "able", 500.00));
   REQUIRE_THROWS(atm.WithdrawCash(12345678, 1234, -1000));
   atm.WithdrawCash(35243453,1234,200);
-  REQUIRE(atm.CheckBalance(35243453,1234) ==300);
-  REQUIRE_THROWS(atm.WithdrawCash(12345, 1234, -1000));
+  REQUIRE(atm.CheckBalance(35243453,1234) == 300);
+  REQUIRE_THROWS(atm.WithdrawCash(12345, 1234, 10));
+  REQUIRE_THROWS(atm.WithdrawCash(12345678, 1671, 1));
+  REQUIRE_THROWS(atm.WithdrawCash(12345678, 1234, 10000));
 }
