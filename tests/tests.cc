@@ -87,4 +87,5 @@ TEST_CASE("My Tests", "[My Test 1]") {
   REQUIRE_THROWS(atm.WithdrawCash(12345, 1234, 10));
   REQUIRE_THROWS(atm.WithdrawCash(12345678, 1671, 1));
   REQUIRE_THROWS(atm.WithdrawCash(12345678, 1234, 10000));
+  REQUIRE_THROWS(atm.DepositCash(12345678, 1234, -10000));
 }
